@@ -16,7 +16,7 @@ const Sidebar = () => {
       }}
     >
         
-        <div className="row mb-4 align-items-center">
+        <div className="row mb-5 align-items-center">
           <div className="col-auto">
             <img
               src="https://res.cloudinary.com/djx3ijal6/image/upload/v1722295300/jfhj54bxh2rpusfkij28.png"
@@ -37,37 +37,34 @@ const Sidebar = () => {
       <Nav className="flex-column mt-5">
         <Nav.Item>
           <Nav.Link href="#" className="text-white mb-4 border-top border-bottom py-4">
-            <FaHome className="me-2" />
-            Dashboard
+<img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328875/SVGRepo_iconCarrier_r39vqs.png' className='mx-1 font-bold'/>            Dashboard
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="#" className="text-white  border-bottom pb-4  pt-4 mb-4">
-            <FaUsers className="me-2" />
-            User Management
+<img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/user-check-svgrepo-com_1_v5z1fq.png' className='me-2'/>            User Management
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="#" className="text-white border-bottom pb-4  pt-4  mb-4">
-            <FaWallet className="me-2" />
+            <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/wallet-2-svgrepo-com_1_h2jdi8.png' className="me-2" />
             Wallet Management
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="#" className="text-white border-bottom pb-4  pt-4  mb-4">
-            <FaExchangeAlt className="me-2" />
+            <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/Copy_of_card-transfer-svgrepo-com_1_dr5f2t.png' className="me-2" />
             Transaction Management
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="#" className="text-white border-bottom pb-4  pt-4  mb-4">
-            <FaCog className="me-2" />
-            Settings
+          <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/pen-new-square-svgrepo-com_1_1_lsrgvj.png' className="me-2" />            Settings
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="#" className="text-white border-bottom pb-4  pt-4 ">
-            <FaChartLine className="me-2" />
+            <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/notes-svgrepo-com_1_seibg6.png' className="me-2" />
             Reports
           </Nav.Link>
         </Nav.Item>
