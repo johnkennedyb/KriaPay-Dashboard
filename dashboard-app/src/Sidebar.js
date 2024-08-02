@@ -7,26 +7,30 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Sidebar = () => {
   return (
-    <div className="d-flex flex-column mx-2 p-3 mt-4 mb-4 text-white" style={{
+    <div className="d-flex flex-column me-2 ms-3 p-3 mt-4 mb-4 text-white" style={{
         // position: 'absolute',
-        width: '300px',
-        height: '954px',
+        width: '269px',
+        height: '748px',
         // left: '20px',
         background: '#072A30',
         borderRadius: '32px'
       }}
     >
-        <div className="row mb-5 align-items-center">
-          <div className="col-auto">
+        <div className="row  align-items-center">
+          <div className="col ">
             <img
               src="https://res.cloudinary.com/djx3ijal6/image/upload/v1722295300/jfhj54bxh2rpusfkij28.png"
               alt="Profile"
-              className="img-fluid rounded-circle"
+              // className="img-fluid rounded-circle"
+              style={{height:'40px',
+            width:"40px",
+            top: ""
+            }}
             />
           </div>
-          <div className="col mt-3">
-            <p className="text-white mb-0">Welcome,</p>
-            <h4 className="text-white">Vincent</h4> 
+          <div className="col  mt-3">
+            <p className="text-white mb-0" style={{fontSize:'10px', fontWeight:"400px"}}>Welcome,</p>
+            <h4 className="text-white" style={{fontSize:'17px', fontWeight:"500px"}}>Vincent</h4> 
           </div>
           <div className="col align-item-start justify-content-end ms-5">
             <img src="https://res.cloudinary.com/djx3ijal6/image/upload/v1722321267/bell-bing-svgrepo-com_2_z8kyxl.png" alt="Notifications"/>
@@ -35,7 +39,7 @@ const Sidebar = () => {
 
         <Nav className="flex-column mt-5">
           <Nav.Item>
-            <Nav.Link href="#" className="text-white mb-4 border-top border-bottom py-4">
+            <Nav.Link href="#" className="text-white mb-3 border-top border-bottom pt-4 pb-4">
               <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328875/SVGRepo_iconCarrier_r39vqs.png' className='mx-1' alt="Dashboard"/>
               Dashboard
             </Nav.Link>
@@ -45,7 +49,7 @@ const Sidebar = () => {
           <Nav.Item className="dropdown">
   <Nav.Link
     href="#"
-    className="text-white border-bottom pb-4 pt-4 mb-4 dropdown-toggle"
+    className="text-white border-bottom pb-4   mb-3 dropdown-toggle"
     id="user-management-dropdown"
     role="button"
     data-bs-toggle="dropdown"
@@ -68,25 +72,25 @@ const Sidebar = () => {
 
           
           <Nav.Item>
-            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-4 mb-4">
+            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-3 mb-4">
               <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/wallet-2-svgrepo-com_1_h2jdi8.png' className="me-2" alt="Wallet Management"/>
               Wallet Management
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-4 mb-4">
+            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-3 mb-4">
               <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/Copy_of_card-transfer-svgrepo-com_1_dr5f2t.png' className="me-2" alt="Transaction Management"/>
               Transaction Management
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-4 mb-4">
+            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-3 mb-4">
               <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/pen-new-square-svgrepo-com_1_1_lsrgvj.png' className="me-2" alt="Settings"/>
               Settings
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-4">
+            <Nav.Link href="#" className="text-white border-bottom pb-4 pt-3">
               <img src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722328921/notes-svgrepo-com_1_seibg6.png' className="me-2" alt="Reports"/>
               Reports
             </Nav.Link>
