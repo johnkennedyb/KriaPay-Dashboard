@@ -7,16 +7,17 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Sidebar = () => {
   return (
-    <div className="d-flex flex-column me-2 ms-3 p-3 mt-4 mb-4 text-white" style={{
+    <div className="d-flex flex-column  ms-3 p-3 mt-4 mb-4 text-white" style={{
         // position: 'absolute',
         width: '269px',
         height: '748px',
         // left: '20px',
         background: '#072A30',
-        borderRadius: '32px'
+        borderRadius: '32px',
+        fontSize: '13px'
       }}
     >
-        <div className="row  align-items-center">
+        <div className="row mb-2  align-items-center">
           <div className="col ">
             <img
               src="https://res.cloudinary.com/djx3ijal6/image/upload/v1722295300/jfhj54bxh2rpusfkij28.png"
