@@ -67,7 +67,7 @@ const data = [
   }
 ];
 
-const UserList = () => {
+const UserWallet = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
@@ -274,4 +274,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default UserWallet;

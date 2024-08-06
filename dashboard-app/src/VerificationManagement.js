@@ -9,7 +9,7 @@ const data = [
     name: 'Daniella Williams', 
     email: 'daniellawilliams@gmail.com', 
     phoneNumber: '+2348142810677', 
-    status: 'Active',
+    status: 'Tier3',
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful', details:'Transfer' },
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful' , details:'Transfer' },
@@ -21,7 +21,7 @@ const data = [
     name: 'John Doe', 
     email: 'johndoe@gmail.com', 
     phoneNumber: '+2348142810678', 
-    status: 'Active',
+    status: 'Tier3',
     transactions: [
       { recipient: 'Jane Doe', type: 'Transfer', amount: 'NGN 30,000.00', status: 'Successful', details:'Transfer' },
       { recipient: 'Mary Johnson', type: 'Payment', amount: 'NGN 15,000.00', status: 'Failed',details:'Transfer' },
@@ -33,7 +33,7 @@ const data = [
     name: 'Jane Smith', 
     email: 'janesmith@gmail.com', 
     phoneNumber: '+2348142810679', 
-    status: 'Blocked',
+    status: 'Tier2',
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Failed' , details:'Transfer' },
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful', details:'Transfer' },
@@ -45,7 +45,7 @@ const data = [
     name: 'Mary Johnson', 
     email: 'maryjohnson@gmail.com', 
     phoneNumber: '+2348142810680', 
-    status: 'Active',
+    status: 'Tier3',
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful' , details:'Transfer' },
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful', details:'Transfer' },
@@ -57,7 +57,7 @@ const data = [
     name: 'James Brown', 
     email: 'jamesbrown@gmail.com', 
     phoneNumber: '+2348142810681', 
-    status: 'Blocked',
+    status: 'Tier2',
     
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Failed' , details:'transfer' },
@@ -67,7 +67,7 @@ const data = [
   }
 ];
 
-const UserList = () => {
+const Verification = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
@@ -183,6 +183,8 @@ const UserList = () => {
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Email</th>
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Phone Number</th>
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Status</th>
+                  <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Edit</th>
+
                 </tr>
               </thead>
               <tbody>
@@ -194,14 +196,14 @@ const UserList = () => {
                     <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>{row.phoneNumber}</td>
                     <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>
                       <div style={{ backgroundColor: '#0a3c43', borderRadius: '10px', fontSize: '13px' }} className="btn d-flex text-white align-items-center">
-                        {row.status === 'Active' ? (
+                        {row.status === 'Tier3' ? (
                           <>
                             <img
                 src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722298541/Copy_of_check-circle-svgrepo-com_1_4_yk2g68.png'
                 alt="Active"
                               style={{ width: '20px', height: '20px', marginRight: '8px' }}
                             />
-                            Active
+                            Tier3
                           </>
                         ) : (
                           <>
@@ -210,10 +212,19 @@ const UserList = () => {
                               alt="Blocked"
                               style={{ width: '20px', height: '20px', marginRight: '8px' }}
                             />
-                            Blocked
+                            Tier2
                           </>
                         )}
                       </div>
+                    </td> 
+                    <td style={{ borderBottom: '1px solid #ffffff', padding: '10px' }}>
+                      <button className="btn btn-link" style={{ padding: 0 }}>
+                        <img 
+                          src="https://res.cloudinary.com/dw7w2at8k/image/upload/v1722777466/Copy_of_pen-2-svgrepo-com_3_u1ysgq.png" 
+                          alt="Edit" 
+                          style={{ width: '20px', height: '20px' }} 
+                        />
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -274,4 +285,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default Verification;

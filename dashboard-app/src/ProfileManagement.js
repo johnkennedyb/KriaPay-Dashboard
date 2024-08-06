@@ -67,7 +67,7 @@ const data = [
   }
 ];
 
-const UserList = () => {
+const Profile = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
@@ -183,6 +183,8 @@ const UserList = () => {
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Email</th>
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Phone Number</th>
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Status</th>
+                  <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Edit</th>
+
                 </tr>
               </thead>
               <tbody>
@@ -214,6 +216,15 @@ const UserList = () => {
                           </>
                         )}
                       </div>
+                    </td> 
+                    <td style={{ borderBottom: '1px solid #ffffff', padding: '10px' }}>
+                      <button className="btn btn-link" style={{ padding: 0 }}>
+                        <img 
+                          src="https://res.cloudinary.com/dw7w2at8k/image/upload/v1722777466/Copy_of_pen-2-svgrepo-com_3_u1ysgq.png" 
+                          alt="Edit" 
+                          style={{ width: '20px', height: '20px' }} 
+                        />
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -274,4 +285,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default Profile;

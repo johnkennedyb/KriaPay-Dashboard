@@ -7,9 +7,12 @@ const data = [
   { 
     userId: '001', 
     name: 'Daniella Williams', 
+    bankName: 'MoniePoint', 
+    requestDate: '12-6-24|5:45 pm', 
+    status: 'Verified',
+    accountNumber:'002223456',
     email: 'daniellawilliams@gmail.com', 
-    phoneNumber: '+2348142810677', 
-    status: 'Active',
+    country:'Nigeria',
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful', details:'Transfer' },
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful' , details:'Transfer' },
@@ -19,9 +22,13 @@ const data = [
   { 
     userId: '002', 
     name: 'John Doe', 
-    email: 'johndoe@gmail.com', 
-    phoneNumber: '+2348142810678', 
-    status: 'Active',
+    bankName: 'Opay', 
+    requestDate: '12-6-24|5:45 pm', 
+    status: 'Verified',
+    accountNumber:'002223456',
+    email:'johndoe@gmail.com',
+    country:'Nigeria',
+
     transactions: [
       { recipient: 'Jane Doe', type: 'Transfer', amount: 'NGN 30,000.00', status: 'Successful', details:'Transfer' },
       { recipient: 'Mary Johnson', type: 'Payment', amount: 'NGN 15,000.00', status: 'Failed',details:'Transfer' },
@@ -31,9 +38,14 @@ const data = [
   { 
     userId: '003', 
     name: 'Jane Smith', 
-    email: 'janesmith@gmail.com', 
-    phoneNumber: '+2348142810679', 
-    status: 'Blocked',
+    bankName: 'Palmpay', 
+    requestDate: '12-6-24|5:45 pm', 
+    status: 'Processing',
+    accountNumber:'002223456',
+    email:'janesmith@gmail.com',
+    country:'Seirra Leone',
+
+
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Failed' , details:'Transfer' },
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful', details:'Transfer' },
@@ -43,9 +55,14 @@ const data = [
   { 
     userId: '004', 
     name: 'Mary Johnson', 
-    email: 'maryjohnson@gmail.com', 
-    phoneNumber: '+2348142810680', 
-    status: 'Active',
+    bankName: 'Kuda', 
+    requestDate: '12-6-24|5:45 pm', 
+    status: 'Verified',
+    accountNumber:'002223456',
+    email:'maryjohnson@gmail.com',
+    country:'Nigeria',
+
+
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful' , details:'Transfer' },
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Successful', details:'Transfer' },
@@ -55,9 +72,13 @@ const data = [
   { 
     userId: '005', 
     name: 'James Brown', 
-    email: 'jamesbrown@gmail.com', 
-    phoneNumber: '+2348142810681', 
-    status: 'Blocked',
+    bankName: 'MoniePoint', 
+    requestDate: '12-6-24|5:45 pm', 
+    status: 'Processing',
+    accountNumber:'002223456',
+    email:'jamesbrown@gmail.com',
+    country:'Serria leone',
+
     
     transactions: [
       { recipient: 'Daniel Williams', type: 'Transfer', amount: 'NGN 50,000.00', status: 'Failed' , details:'transfer' },
@@ -67,7 +88,7 @@ const data = [
   }
 ];
 
-const UserList = () => {
+const PayOutInformation = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
@@ -180,9 +201,11 @@ const UserList = () => {
                 <tr>
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>User ID</th>
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Name</th>
-                  <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Email</th>
-                  <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Phone Number</th>
+                  <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Bank Name</th>
+                  <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Request date</th>
                   <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Status</th>
+                  <th style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>Edit</th>
+
                 </tr>
               </thead>
               <tbody>
@@ -190,30 +213,39 @@ const UserList = () => {
                   <tr key={row.userId} onClick={() => handleRowClick(row)} style={{ cursor: 'pointer' }}>
                     <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>{row.userId}</td>
                     <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>{row.name}</td>
-                    <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>{row.email}</td>
-                    <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>{row.phoneNumber}</td>
+                    <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>{row.bankName}</td>
+                    <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>{row.requestDate}</td>
                     <td style={{ borderBottom: '1px solid #ffffff', padding: '10px', textAlign: 'left' }}>
                       <div style={{ backgroundColor: '#0a3c43', borderRadius: '10px', fontSize: '13px' }} className="btn d-flex text-white align-items-center">
-                        {row.status === 'Active' ? (
+                        {row.status === 'Verified' ? (
                           <>
                             <img
                 src='https://res.cloudinary.com/djx3ijal6/image/upload/v1722298541/Copy_of_check-circle-svgrepo-com_1_4_yk2g68.png'
                 alt="Active"
                               style={{ width: '20px', height: '20px', marginRight: '8px' }}
                             />
-                            Active
+                            Verified
                           </>
                         ) : (
                           <>
                             <img
-                              src='https://res.cloudinary.com/dw7w2at8k/image/upload/v1722776864/close-circle-svgrepo-com_1_wddfsv.png'
+                              src='https://res.cloudinary.com/dw7w2at8k/image/upload/v1722958049/clock-circle-svgrepo-com_2_khzp6k.png'
                               alt="Blocked"
                               style={{ width: '20px', height: '20px', marginRight: '8px' }}
                             />
-                            Blocked
+                            Processing
                           </>
                         )}
                       </div>
+                    </td> 
+                    <td style={{ borderBottom: '1px solid #ffffff', padding: '10px' }}>
+                      <button className="btn btn-link" style={{ padding: 0 }}>
+                        <img 
+                          src="https://res.cloudinary.com/dw7w2at8k/image/upload/v1722777466/Copy_of_pen-2-svgrepo-com_3_u1ysgq.png" 
+                          alt="Edit" 
+                          style={{ width: '20px', height: '20px' }} 
+                        />
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -242,10 +274,18 @@ const UserList = () => {
                 }}
               />Active
             </h4>
+            <p style={{ fontSize: '13px' }}><strong>User Id:</strong> {selectedUser.userId}</p>
             <p style={{ fontSize: '13px' }}><strong>Name:</strong> {selectedUser.name}</p>
+
             <p style={{ fontSize: '13px' }}><strong>Email:</strong> {selectedUser.email}</p>
-            <p style={{ fontSize: '13px' }}><strong>Phone Number:</strong> {selectedUser.phoneNumber}</p>
-            <p style={{ fontSize: '13px', borderBottom: '1px solid #ffffff' }}><strong>Status:</strong> {selectedUser.status}</p>
+            <p style={{ fontSize: '13px', borderBottom: '1px solid #ffffff', paddingBottom:'7px' }}><strong>Country:</strong> {selectedUser.country}</p>
+            <p style={{ fontSize: '13px', }}><strong>Status:</strong> {selectedUser.status}</p>
+            <p style={{ fontSize: '13px', }}><strong>Account Name:</strong> {selectedUser.name}</p>
+            <p style={{ fontSize: '13px', }}><strong>Bank Name:</strong> {selectedUser.bankName}</p>
+            <p style={{ fontSize: '13px',  borderBottom: '1px solid #ffffff', paddingBottom:'7px' }}><strong>Account Number:</strong> {selectedUser.accountNumber}</p>
+
+
+
             <h5 style={{ fontSize: '13px' }}>Recent Transactions</h5>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px'}}>
@@ -274,4 +314,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default PayOutInformation;
